@@ -1,0 +1,145 @@
+import type { RoadmapPhase } from "./types";
+
+export const phases: RoadmapPhase[] = [
+  {
+    id: "now",
+    when: "Aug–Nov 2026 · rest of 5th",
+    title: "Do not skip the labs you already have",
+    items: {
+      hireable: [
+        "Run the 6-week EDA crash in parallel with classes. This is the whole game.",
+        "EE301 / EE321 / EE322 labs: keep raw data, write a 1-page note each. Those notes are portfolio.",
+        "Open elective: CS (DSA or OS) or CAD, not a throwaway. You have one OE this term.",
+        "Pick a field this month. Hedge later if you must. Do not stay 'open to everything' until 7th.",
+        "Follow 8 companies. Read one engineering blog or FCC/teardown a week.",
+      ],
+      depth: [
+        "Same crash, but extend EE322 or EE301 into a mini-paper: model vs measurement.",
+        "Start the math you will need (linear algebra if weak, probability if comms).",
+        "Read one textbook chapter a week in the field — Erickson, Oppenheim, or Ogata, not blogs only.",
+      ],
+      founder: [
+        "Crash + labs, plus a problem you could charge for (a test jig, a charger, a sensor).",
+        "Talk to 5 people who buy hardware in that problem. Notes in the repo.",
+        "Cost the BOM in INR with LCSC + GST. Founders who cannot cost are hobbyists.",
+      ],
+    },
+  },
+  {
+    id: "winter",
+    when: "Dec 2026 · winter",
+    title: "Finish the first artefact",
+    items: {
+      hireable: [
+        "Board assembled, firmware logging, README with photos. Non-negotiable.",
+        "Apply to winter/summer research (faculty, ISRO intern portals, InCore/Mindgrove if open).",
+        "If the board failed, write the failure. Then spin v2. v2 is the story.",
+      ],
+      depth: [
+        "Add a measurement that is not a tutorial: noise floor, efficiency, BER, step response.",
+        "Email one professor with that plot, ask to sit in a lab in 6th sem.",
+      ],
+      founder: [
+        "Put the artefact in front of a user. If nobody cares, kill it before 6th sem.",
+        "A one-page spec: who, what, BOM, what you will know by May.",
+      ],
+    },
+  },
+  {
+    id: "s6",
+    when: "Jan–May 2027 · 6th sem",
+    title: "The money semester",
+    items: {
+      hireable: [
+        "EE331 Embedded and EE311 Power: treat as a job. Full attendance in those labs.",
+        "Program elective: lock the field (see Electives). Do not take two unrelated PEs.",
+        "Portfolio project that combines embedded + your field (FOC, EPS mock, SDR, FPGA UART).",
+        "Dec–Mar: applications for summer internships. Qualcomm-class is often later; startups are rolling.",
+      ],
+      depth: [
+        "Same cores, plus the hard PE (EE661 / EE613 / EE606 / EE621).",
+        "A paper reproduction or a proper report, not only a GitHub toy.",
+      ],
+      founder: [
+        "Use EE331/EE311 labs as the prototype factory. Do not start a second product.",
+        "If you have a user, run a paid pilot even if it is ₹2,000. Revenue is a teacher.",
+      ],
+    },
+  },
+  {
+    id: "summer",
+    when: "May–Jul 2027 · summer",
+    title: "Rehearsal intern",
+    items: {
+      hireable: [
+        "Get any hardware seat: startup, TI/Bosch, faculty lab, ISRO. Unpaid is acceptable if the work is real.",
+        "If you get nothing: 8-week self-intern. Spec, board, firmware, test log, as if a manager asked.",
+        "Ask for a letter and a specific sentence of work you owned.",
+      ],
+      depth: [
+        "Prefer a lab that publishes or a silicon team. One good reference > three certificates.",
+      ],
+      founder: [
+        "Either a customer-facing build or a deep intern at a company you might compete with. Pick one.",
+      ],
+    },
+  },
+  {
+    id: "s7",
+    when: "Jul–Nov 2027 · 7th sem",
+    title: "Applications window",
+    items: {
+      hireable: [
+        "Portfolio frozen by 1 August: 2 repos, 1 video, 1 page CV, GitHub pinned.",
+        "Qualcomm / TI / analog MNCs: watch July openings. Startups: rolling, but they fill.",
+        "EE443 mini-project if you can — make it the same as the portfolio, not a new topic.",
+        "Alumni: 20 messages, not 200. Attach the video, ask for 15 minutes.",
+        "Do not start a new stack in September. Deepen the one you have.",
+      ],
+      depth: [
+        "Mini-project should look like a paper + artefact. Use it as the writing sample.",
+        "If MS is a parallel path, GRE/TOEFL only after applications for intern are out.",
+      ],
+      founder: [
+        "If the product has a pulse, take EE443 as the company. If not, take the intern path — you can found at 24.",
+        "A 12-credit intern at a hardware startup will teach you more about founding than another campus prototype.",
+      ],
+    },
+  },
+  {
+    id: "s8",
+    when: "Jan–May 2028 · 8th intern",
+    title: "EE442, not a BTP, if you want a job",
+    items: {
+      hireable: [
+        "Take EE442 (12 cr). BTP is for MS/thesis. Startups do not promote your BTP poster.",
+        "In the intern: own a board or a test. Write the procedure. Ask for the return offer in week 8, not week 12.",
+        "Keep a weekly log. Future you will need it for interviews.",
+      ],
+      depth: [
+        "If the intern is shallow, add a night-time measurement campaign. Don't be precious — ship the report.",
+      ],
+      founder: [
+        "Steal process: how they buy parts, how they fail EMC, how they talk to vendors. That is the MBA.",
+      ],
+    },
+  },
+];
+
+export const modeCopy: Record<
+  "hireable" | "depth" | "founder",
+  { title: string; line: string }
+> = {
+  hireable: {
+    title: "Hireable",
+    line: "Default. One field, one artefact, one intern. Optimised for an 8th-sem offer at a hardware team.",
+  },
+  depth: {
+    title: "Depth",
+    line: "Same path, slower and more mathematical. For people who might MS, silicon, or GNC. Still needs a board.",
+  },
+  founder: {
+    title: "Founder",
+    line: "Same engineering, plus users, BOM, and the courage to kill a project. Do not skip the crash to 'work on the idea'.",
+  },
+};

@@ -1,0 +1,76 @@
+import type { CrashWeek } from "./types";
+
+export const crashWeeks: CrashWeek[] = [
+  {
+    id: "w1",
+    week: 1,
+    title: "C, git, and a board on the way",
+    why: "You cannot learn KiCad in a vacuum. The MCU is the reason the PCB exists.",
+    tasks: [
+      { id: "w1a", text: "Install Git, make a GitHub repo named like `trace-lab`. One README sentence." },
+      { id: "w1b", text: "C recap: pointers, structs, bitwise, volatile. Write a tiny ring buffer. Commit it." },
+      { id: "w1c", text: "Order hardware tonight: STM32 Nucleo (or ESP32-S3) + USB-UART if needed + jumper wires. Robu / Quartz / Amazon." },
+      { id: "w1d", text: "Install KiCad 8 or 9. Open it. Make a schematic symbol of an LED + resistor. That is the whole win." },
+    ],
+  },
+  {
+    id: "w2",
+    week: 2,
+    title: "First schematic that could be fabricated",
+    why: "Schematic literacy is the interview. Layout comes after the netlist is honest.",
+    tasks: [
+      { id: "w2a", text: "KiCad schematic: USB-UART (or USB-C if you are brave) + 3V3 LDO + LED + header for your MCU UART." },
+      { id: "w2b", text: "Read the LDO datasheet. Note abs max, dropout, thermal. Put 10 lines in the README." },
+      { id: "w2c", text: "ERC clean. Hierarchical labels if it helps. No floating inputs." },
+      { id: "w2d", text: "Assign footprints. Learn the difference between 0603 and 0805. Stay 0805 if you will hand-solder." },
+    ],
+  },
+  {
+    id: "w3",
+    week: 3,
+    title: "Layout, DRC, gerbers",
+    why: "This is the EDA you said you don't know. After this week, you do.",
+    tasks: [
+      { id: "w3a", text: "2-layer board. GND pour on the bottom. Short USB D+/D−. Decoupling 1 mm from the LDO." },
+      { id: "w3b", text: "DRC clean. Silkscreen that a stranger can assemble. Mounting holes." },
+      { id: "w3c", text: "Export gerbers + BOM + CPL. Order 5 boards (JLCPCB / PCBPower). Or campus fab if faster." },
+      { id: "w3d", text: "Commit the project. Screenshot of 3D view in the README. You now have an EDA line on the CV." },
+    ],
+  },
+  {
+    id: "w4",
+    week: 4,
+    title: "Firmware that is not blink",
+    why: "Startups do not hire blink. They hire UART logs and a sensor that keeps working.",
+    tasks: [
+      { id: "w4a", text: "Tooling: PlatformIO or CubeIDE. Hello UART at 115200. No Arduino framework if you can avoid it." },
+      { id: "w4b", text: "GPIO + a timer ISR. Prove with a scope or a logic analyzer (PulseView + cheap 24 MHz clone)." },
+      { id: "w4c", text: "I2C or SPI sensor (IMU, temp, whatever arrived). Print calibrated values." },
+      { id: "w4d", text: "Python pyserial script that logs to CSV and plots. This is the intern flex." },
+    ],
+  },
+  {
+    id: "w5",
+    week: 5,
+    title: "Spice, then a converter",
+    why: "6th sem power electronics will feel like a continuation, not a cliff.",
+    tasks: [
+      { id: "w5a", text: "LTspice: buck, 5 V to 3.3 V. CCM. Inductor current and Vout. Save the .asc." },
+      { id: "w5b", text: "Add ESR and a load step. Watch the ring. Write what you would change." },
+      { id: "w5c", text: "Optional hardware: a module buck on a breadboard, probe Vin, SW, Vout with a short ground." },
+      { id: "w5d", text: "Read one TI or Infineon 'buck basics' app note. Highlight layout pages." },
+    ],
+  },
+  {
+    id: "w6",
+    week: 6,
+    title: "Bring-up, writeup, publish",
+    why: "A board in a drawer is a hobby. A board with a test log is an internship.",
+    tasks: [
+      { id: "w6a", text: "Assemble the PCB when it lands. Bring-up procedure in the README: 1. visual 2. shorts 3. USB 4. 3V3 5. UART." },
+      { id: "w6b", text: "Scope photo of 3V3 and of UART. If it fails, write what you tried. Failures are better than fake success." },
+      { id: "w6c", text: "2-minute video: schematic → board → serial plot. Phone camera is fine." },
+      { id: "w6d", text: "Pin the repo. Add one paragraph to your LinkedIn. You are no longer 'I don't know EDA'." },
+    ],
+  },
+];
